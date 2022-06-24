@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Image Color Generator</title>
+    <style>
+        .grid-container {
+          display: grid;
+          grid-template-columns: auto auto auto auto;
+          gap: 10px;
+          background-color: #2196F3;
+          padding: 10px;
+        }
+
+        .grid-container > div {
+          background-color: rgba(255, 255, 255, 0.8);
+          border: 1px solid black;
+          text-align: center;
+          font-size: 30px;
+        }
+</style>
+</head>
+<body>
+<header>
+    <h1>My Image Color Generator</h1>
+</header>
+<section>
+    <!-- Image Import -->
+    <p>Please import your image here</p>
+      <form action = "http://localhost:5000/uploader" method = "POST"
+         enctype = "multipart/form-data">
+        <input type="file" name="file">
+        <input type="submit">
+    </form>
+</section>
+<section>
+<!--   uploaded picture -->
+    <div>
+        <img src="#">
+    </div>
+    <div>
+        <div class="grid-container">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div>10</div>
+        </div>
+    </div>
+
+</section>
+
+
+</body>
+</html>
