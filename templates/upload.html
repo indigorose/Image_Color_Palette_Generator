@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Image Color Generator</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+</head>
+<body>
+    <header id="main-header" class="main-header">
+        <nav class="nav-bar">
+            <ul>
+              <li class="nav-link--brand-link" id="brand-link"><a href="#home">KR</a></li>
+              <li class="nav-link--title" id="title"><a href="{{url_for('upload')}}">Image Color Palette Generator</a></li>
+              <li class="nav-link"><a href="#projects">More Projects</a></li>
+            </ul>
+        </nav>
+    </header>
+<section>
+    <!-- Image Import -->
+        {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul class=flashes>
+    {% for message in messages %}
+        <li>{{ message }}</li>
+    {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}
+    <p>Please import your image here</p>
+      <form action = "{{url_for('upload')}}" method = "POST"
+         enctype = "multipart/form-data">
+        <input type="file" name="photo">
+        <button type="submit">Submit</button>
+    </form>
+</section>
+<section>
+<!--   uploaded picture -->
+    <div>
+        <img src="#">
+    </div>
+    <div>
+        <div class="grid-container">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div>10</div>
+        </div>
+    </div>
+</section>
+
+
+</body>
+</html>

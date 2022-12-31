@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&family=Montserrat:wght@100;300;400;600;800;900&family=Outfit:wght@100;200;300;400;700;900&&display=swap');
+
+/* Core CSS */
+:root {
+  font-family: 'Open Sans','Outfit', sans-serif;
+  --main-text: black;
+  --main-text-2: white;
+TODO - change colors
+  --main-1: rgb(255, 225, 98);
+  --main-2: rgb(255, 100, 100);
+  --main-3: rgb(145, 196, 131);
+  --main-4: rgb(238, 238, 238);
+}
+* {
+    box-sizing: border-box;
+}
+body {
+    border: 0;
+    margin: 0;
+}
+ul{
+    list-style-type: none;
+}
+
+a:link { text-decoration: none; }
+a:visited { text-decoration: none; }
+a:hover { text-decoration: none; }
+a:active { text-decoration: none; }
+
+/* Classes */
+
+.main-header {
+    /*border: 1px green solid;*/
+    background-color: var(--main-3);
+}
+
+nav ul{
+    /*border: 1px solid blue;
+*/
+    display: grid;
+    grid-template-columns: auto auto auto;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-link--brand-link a {
+    /*border: 2.5px solid var(--main-text-2);
+    border-radius: 50%;*/
+    /*border: 1px solid red;*/
+    float: left;
+    margin: 2%;
+    padding-left: 1em;
+    font-family: 'Outfit';
+    font-size: 1.80em;
+    font-weight: 700;
+    color: var(--main-text-2);
+}
+
+.nav-link--title{
+    /*border: 1px solid blue;*/
+    padding-left: 100px;
+    text-align: center;
+    font-family: "Montserrat";
+    font-size: 2.5em;
+    font-weight: 600;
+}
+
+.nav-link--title a{
+    color: var(--main-text-2);
+}
+
+.nav-link a {
+    /*border: 1px solid red;*/
+    float: right;
+    margin: 2%;
+    font-family: 'Montserrat';
+    font-size: 1.60em;
+    color: var(--main-text-2);
+}
+
+.container-upload{
+    border: 1px solid green;
+    width: 500px;
+    height: 600px;
+    margin: auto;
+    padding: 10px;
+}
+
+.container-color_grid{
+    border: 1px solid blue;
+    width: 500px;
+    height: 600px;
+    margin: auto;
+    padding: 10px;
+
+}
+.image-color_box{
+    border: 1px solid green;
+    width: 100px;
+    height: 100px;
+
+
+}
+.color_box {
+    border: 1px solid green;
+    width: 100px;
+    height: 100px;
+
+}
