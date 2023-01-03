@@ -41,6 +41,7 @@ def color_palette(path):
     hex_palette = []
     for color in ct_palette:
         hex_palette.append(rgb_to_hex(color))
+    print(hex_palette)
     return hex_palette
 
 

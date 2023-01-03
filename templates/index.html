@@ -9,45 +9,73 @@
     <header id="main-header" class="main-header">
         <nav class="nav-bar">
             <ul>
-              <li class="nav-link--brand-link" id="brand-link"><a href="#home">KR</a></li>
+              <li class="nav-link--brand-link" id="brand-link"><a href="#home">KR.</a></li>
               <li class="nav-link--title" id="title"><a href="{{url_for('upload')}}">Image Color Palette Generator</a></li>
               <li class="nav-link"><a href="#projects">More Projects</a></li>
             </ul>
         </nav>
     </header>
-    <section class="container-upload">
-        <!-- Image Import -->
-        <h6>Please import your picture below</h6>
-          <form method = "POST" enctype = "multipart/form-data">
-              {{ form.hidden_tag() }}
-
-              {% for error in form.photo.errors %}
-                <span style="color: red;">{{ error }}</span>
-              {% endfor %}
-              <div class="upload--form">
-                  <div class="form">
-                      {{ form.photo }}
-                  </div>
-                  <div class="form_submit">
+    <div class="container-main">
+        <section class="container-main_upload">
+            <!-- Image Import -->
+            <h3 class="main_upload-title">Please Import Your Picture Below</h3>
+            <form method = "POST" enctype = "multipart/form-data">
+                {{ form.hidden_tag() }}
+                {% for error in form.photo.errors %}
+                    <span style="color: red;">{{ error }}</span>
+                {% endfor %}
+                <div class="main_upload--form">
+                    <div class="form">
+                        {{ form.photo(class_="form_upload")}}
+                    </div>
+                    <div class="form_submit">
                         {{ form.submit }}
-                  </div>
-              </div>
-        </form>
-    </section>
-    <section class="container-image">
-    <!--   Color breakdown -->
-        {% if file_url %}
-        <div class="image-display">
-            <img src="{{ file_url }}" style="width: 400px;">
-        </div>
-        {% endif %}
-        <div class="image-color_box">
-            {% for color in palette %}
-            <div class="color_box" style="background-color:{{color}};">
-                <p class="color_palette">{{color}}</p>
+                    </div>
+                </div>
+            </form>
+        </section>
+        <section class="container-image">
+        <!--   Color breakdown -->
+            {% if file_url %}
+                <div class="image-display">
+                    <div class="image-display_box-title">
+                    <h3 class="display_box-title">Photo</h3>
+                    </div>
+                    <div class="image-display_box">
+                    <img src="{{ file_url }}" style="max-width: 100%; max-height: 100%; padding: 10px; margin: auto;">
+                    </div>
+                </div>
+            {% else %}
+                <div class="image-display">
+                    <div class="image-display_box-title">
+                    <h3 class="display_box-title">No Photo</h3>
+                    </div>
+                    <div class="image-display_box"></div>
+                </div>
+            {% endif %}
+            <div class="container--image-color_box">
+                <div class="image-color_box-title">
+                    <h3 class="color_box-title">Colors</h3>
+                </div>
+                <div class="image-color_box">
+                    {% if file_url %}
+                        {% for color in palette %}
+                            <div class="color_box">
+                            <div class="color_palette" style="background-color:{{color}};"></div>
+                            <p class="color_title">{{color}}</p>
+                            </div>
+                        {% endfor %}
+                    {% else %}
+                        {% for i in range(10)%}
+                            <div class="color_box">
+                                <div class="color_palette" style="border: 1px dotted grey;"></div>
+                                <p class="color_title">No Color</p>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                </div>
             </div>
-            {% endfor %}
-        </div>
-    </section>
+        </section>
+    </div>
 </body>
 </html>
